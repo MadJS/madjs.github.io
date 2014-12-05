@@ -5,44 +5,47 @@ module.exports = (grunt) ->
     jade:
       compile:
         files:
-          'index.html': 'index.jade'
+          'public/index.html': 'src/index.jade'
 
-    stylus:
-      compile:
+    htmlmin:
+      dist:
+        options:
+          collapseWhitespace: true
+          minifyJS: true
+          minifyCSS: true
         files:
-          'main.css': 'main.styl'
-
-    coffee:
-      compile:
-        files:
-          'main.js': 'main.coffee'
+          'public/index.html': 'public/index.html'
 
     connect:
       server:
         options:
           hostname: '*'
           port: 8000,
-          base: '.'
+          base: 'public'
           livereload: true
 
     watch:
       options:
         livereload: true
-      files: ['*.html', '*.css']
-      jade:
-        files: '*.jade'
-        tasks: 'jade'
-      stylus:
-        files: '*.styl'
-        tasks: 'stylus'
-      coffee:
-        files: '*.coffee'
-        tasks: 'coffee'
+      anything:
+        files: [
+          'src/*.jade'
+          'src/*.styl'
+          'src/*.coffee'
+        ]
+        tasks: [
+          'jade'
+          'htmlmin'
+        ]
 
   grunt.loadNpmTasks 'grunt-contrib-jade'
-  grunt.loadNpmTasks 'grunt-contrib-stylus'
-  grunt.loadNpmTasks 'grunt-contrib-coffee'
+  grunt.loadNpmTasks 'grunt-contrib-htmlmin'
   grunt.loadNpmTasks 'grunt-contrib-connect'
   grunt.loadNpmTasks 'grunt-contrib-watch'
 
-  grunt.registerTask 'default', ['jade', 'stylus', 'coffee', 'connect', 'watch']
+  grunt.registerTask 'default', [
+    'jade'
+    'htmlmin'
+    'connect'
+    'watch'
+  ]

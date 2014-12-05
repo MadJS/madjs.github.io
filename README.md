@@ -1,4 +1,4 @@
 madjs.github.io
 ===============
 
-madjs.com
+http://madjavascript.com
