@@ -63,6 +63,8 @@ html(lang="en")
             section.sponsors
               .container
                 h2 Sponsors
+                a(href="http://flexion.us")
+                  img.picture.sponsor-logo(src="sponsors/flexion.png" alt="Flexion")
                 a(href="http://saturnsys.com")
                   img.picture.sponsor-logo(src="sponsors/saturn.png" alt="Saturn Systems")
                 a(href="http://frontendmasters.com")
@@ -75,11 +77,9 @@ html(lang="en")
                   img.picture.sponsor-logo(src="sponsors/drifty.png" alt="Drifty")
                 a(href="http://www.sencha.com")
                   img.picture.sponsor-logo(src="sponsors/sencha.png" alt="Sencha")
-                a(href="http://flexion.us")
-                  img.picture.sponsor-logo(src="sponsors/flexion.png" alt="Flexion")
                 a(href="http://www.telerik.com")
                   img.picture.sponsor-logo(src="sponsors/telerik.png" alt="Telerik")
-    footer &copy; 2014 MadJS
+    footer &copy; #{new Date().getFullYear()} MadJS
     script(src="//code.jquery.com/jquery-2.1.1.min.js")
     script
       include:coffeescript main.coffee
