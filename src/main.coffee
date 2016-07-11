@@ -1,7 +1,7 @@
 $(document).ready ->
   $.ajax
     dataType: 'jsonp'
-    url: 'http://api.meetup.com/2/events?group_id=2406542&status=upcoming&order=time&limited_events=False&desc=false&offset=0&format=json&page=2&fields=&sig_id=14120285&sig=fa577668ef6569dbff70e2c0a6f8f85c35496962'
+    url: 'https://api.meetup.com/2/events?group_id=2406542&status=upcoming&order=time&limited_events=False&desc=false&offset=0&format=json&page=2&fields=&sig_id=14120285&sig=fa577668ef6569dbff70e2c0a6f8f85c35496962'
     success: (data, textStatus, jqXHR) ->
       content = ''
       for result in data.results
@@ -16,8 +16,8 @@ $(document).ready ->
     success: (data, textStatus, jqXHR) ->
       content = ''
       for result in data.items
-        content += '<div class="event"><h3><a href="http://www.youtube.com/watch?v=' + result.id.videoId + '">' + result.snippet.title + '</h3></a>'
-        content += '<iframe width="100%" height="400" src="//www.youtube.com/embed/' + result.id.videoId + '" frameborder="0" allowfullscreen></iframe> </div>'
+        content += '<div class="event"><h3><a href="https://www.youtube.com/watch?v=' + result.id.videoId + '">' + result.snippet.title + '</h3></a>'
+        content += '<iframe width="100%" height="400" src="https://www.youtube.com/embed/' + result.id.videoId + '" frameborder="0" allowfullscreen></iframe> </div>'
       $('.youtube-details').html content
       return
   return
