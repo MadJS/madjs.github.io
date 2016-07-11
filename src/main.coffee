@@ -1,11 +1,13 @@
 $(document).ready ->
+  console.log "Loading meetup events"
   $.ajax
     dataType: 'jsonp'
-    url: 'https://api.meetup.com/2/events?group_id=2406542&status=upcoming&order=time&limited_events=False&desc=false&offset=0&format=json&page=2&fields=&sig_id=14120285&sig=fa577668ef6569dbff70e2c0a6f8f85c35496962'
-    success: (data, textStatus, jqXHR) ->
+    url: 'https://api.meetup.com/MadisonJS/events'
+    success: (results, textStatus, jqXHR) ->
       content = ''
-      for result in data.results
-        content += '<div class="event"><h3><a href="' + result.event_url + '">' + result.name + '</a></h3>'
+      for result in results.data
+        continue if /Topic TBD/.test result.name
+        content += '<div class="event"><h3><a href="' + result.link + '">' + result.name + '</a></h3>'
         content += '<p class="date">' + new Date(result.time).toLocaleDateString() + '</p>'
         content += '<div class="event-details">' + result.description + '</div></div>'
       $('.meetup-details').html content

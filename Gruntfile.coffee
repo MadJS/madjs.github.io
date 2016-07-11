@@ -21,12 +21,12 @@ module.exports = (grunt) ->
         options:
           hostname: '*'
           port: 8000,
-          base: 'public'
+          base: '.'
           livereload: true
 
     watch:
       options:
-        livereload: true
+        livereload: 39999
       anything:
         files: [
           'src/*.jade'
