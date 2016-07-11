@@ -5,7 +5,7 @@ module.exports = (grunt) ->
     jade:
       compile:
         files:
-          'public/index.html': 'src/index.jade'
+          'index.html': 'src/index.jade'
 
     htmlmin:
       dist:
@@ -14,7 +14,7 @@ module.exports = (grunt) ->
           minifyJS: true
           minifyCSS: true
         files:
-          'public/index.html': 'public/index.html'
+          'index.html': 'index.html'
 
     connect:
       server:
