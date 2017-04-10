@@ -13,9 +13,30 @@ export default class App extends Component {
 
 	componentDidMount() {
 		// start a timer for the clock:
+    this.setFromLocalStorage();
 		this.updateEvents();
     this.updatePastEvents();
 	}
+
+  setFromLocalStorage() {
+    let a = window.localStorage.getItem('upcomingEvents') || '[]';
+    let b = window.localStorage.getItem('previousEvents') || '[]';
+    try {
+      a = JSON.parse(a)
+    } catch (e) {
+      a = [];
+    }
+    try {
+      b = JSON.parse(b)
+    } catch (e) {
+      b = [];
+    }
+
+    this.setState({
+      upcomingEvents: a,
+      previousEvents: b
+    });
+  }
 
 	// update the current time
 	updateEvents() {
@@ -24,6 +45,7 @@ export default class App extends Component {
     ).then((response) => {
       return response.json();
     }).then(({ data }) => {
+      window.localStorage.setItem('upcomingEvents', JSON.stringify(data));
       this.setState({
         upcomingEvents: data
       });
@@ -36,6 +58,7 @@ export default class App extends Component {
     ).then((response) => {
       return response.json();
     }).then(({ items }) => {
+      window.localStorage.setItem('previousEvents', JSON.stringify(items));
       this.setState({
         previousEvents: items
       });

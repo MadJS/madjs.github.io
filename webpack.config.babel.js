@@ -16,9 +16,9 @@ module.exports = {
 	entry: './index.js',
 
 	output: {
-		path: path.resolve(__dirname, "build"),
+		path: path.resolve(__dirname, "docs"),
 		publicPath: '/',
-		filename: 'bundle.js'
+		filename: 'js/bundle.js'
 	},
 
 	resolve: {
@@ -69,7 +69,7 @@ module.exports = {
 	plugins: ([
 		new webpack.NoErrorsPlugin(),
 		new ExtractTextPlugin({
-      filename: 'style.css',
+      filename: 'css/style.css',
 			allChunks: true
 		}),
 		new webpack.DefinePlugin({

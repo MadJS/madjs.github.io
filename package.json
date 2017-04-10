@@ -7,7 +7,7 @@
     "start": "serve build -s -c 1",
     "prestart": "npm run build",
     "build": "cross-env NODE_ENV=production webpack -p --progress",
-    "prebuild": "mkdirp build && ncp src/assets build/assets"
+    "prebuild": "mkdirp build && ncp src/assets docs/assets"
   },
   "devDependencies": {
     "babel": "^6.23.0",

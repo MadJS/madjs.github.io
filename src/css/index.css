@@ -17,6 +17,11 @@ body {
     background: radial-gradient(#eee, #aaa);
 }
 
+section.events .container,
+section.youtube .container {
+  min-height: 500px;
+}
+
 h2 {
     font-size: 2em;
     padding-bottom: 0.5em;
