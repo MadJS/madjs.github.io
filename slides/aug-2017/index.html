@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>MadJS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="../common/css/reveal.css">
+    <link rel="stylesheet" href="../common/css/theme/white.css" id="theme">
+    <link rel="stylesheet" href="../common/lib/css/zenburn.css">
+
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? '../common/css/print/pdf.css' : '../common/css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+
+    <style>
+      .reveal section img.nostyle {
+          background: none;
+          border: none;
+          box-shadow: none;
+          margin: 0;
+      }
+      .reveal section img.logo {
+        width: 200px;
+        margin-bottom: -45px !important;
+        display: inline-block;
+      }
+      .reveal section img.trans {
+        background-color: transparent;
+        border: none;
+        box-shadow: none;
+        margin: 0;
+      }
+      .reveal section .welcome {
+        margin-bottom: 50px;
+      }
+      .reveal section .presentation-list {
+        list-style: none;
+        padding: 0;
+        margin: 25px 0 60px;
+        width: 85%;
+        font-size: 0.8em
+      }
+      .reveal section .presentation-list li {
+        overflow: hidden;
+        text-align: center;
+      }
+      .reveal section .presentation-list li.intro {
+        text-align: center;
+        margin-bottom: 10px;
+        font-weight: bold;
+        margin-bottom: 25px;
+      }
+      .reveal section .presentation-list .topic:before {
+        content: "“";
+      }
+      .reveal section .presentation-list .topic:after {
+        content: "”";
+      }
+      .reveal section .sponsor {
+        font-size: 0.8em;
+        font-weight: bold;
+      }
+    </style>
+
+    <!--[if lt IE 9]>
+    <script src="../common/lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+
+    <div class="reveal">
+
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+        <section>
+          <h2 class="welcome">Welcome to
+            <img class="logo trans" src="../common/images/madjs-logo.png" alt="MadJS" />
+          </h2>
+          <ul class="presentation-list">
+            <li class="intro">Tonights Presentation</li>
+            <li>
+              Josh Thomas (@jthoms1)<br/><span class="topic">Stencil: Building Performant Reusable Components for the Web</span>
+            </li>
+          </ul>
+          <div class="sponsor">
+            <p>Tonight we are sponsored by:</p>
+            <img class="trans" src="../sponsor-logos/ionic-logo.png" alt="Ionic" />
+          </div>
+        </section>
+        <section>
+          <h3>Announcements?</h3>
+        </section>
+      </div>
+    </div>
+
+    <script src="../common/lib/js/head.min.js"></script>
+    <script src="../common/js/reveal.js"></script>
+    <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+        width: 1060,
+        height: 750,
+        margin: 0,
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: '../common/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: '../common/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: '../common/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: '../common/plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: '../common/plugin/zoom-js/zoom.js', async: true },
+          { src: '../common/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+  </body>
+</html>
